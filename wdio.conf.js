@@ -26,13 +26,13 @@ export const config = {
         timeout: 60000
     },
 
-    // Hook para capturar pantalla si la prueba falla
-    afterTest: async function(test, context, { error }) {
-        if (error) {
-            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-            const filename = `./screenshots/errors/${test.title}-${timestamp}.png`;
-            await browser.saveScreenshot(filename);
-            console.log(`Captura de pantalla guardada: ${filename}`);
-        }
+   // Hook para capturar pantalla si la prueba falla
+	afterTest: async function(test, context, { error }) {
+    if (error) {
+        const filename = `./screenshots/errors/${test.title}.png`; // Solo el título de la prueba sin timestamp
+        await browser.saveScreenshot(filename);
+        console.log(`Captura de pantalla guardada: ${filename}`);
     }
+}
+
 };

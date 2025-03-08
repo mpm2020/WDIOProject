@@ -3,7 +3,7 @@ import { expect } from 'chai'; // Uso de expect de Chai
 
 describe('Front Test- SauceDemo-Validación de Inicio de Sesión', () => {
     
-    it('CP-001: Iniciar sesión con credenciales válidas', async () => {
+    it('CP-001-Iniciar sesión con credenciales validas', async () => {
         await browser.url('/');
         const loginPage = new LoginPage(); // Creamos una instancia de LoginPage
         await loginPage.login('standard_user', 'secret_sauce');
@@ -11,7 +11,7 @@ describe('Front Test- SauceDemo-Validación de Inicio de Sesión', () => {
         expect(url).to.include('inventory.html', 'El inicio de sesión falló con credenciales correctas');
     });
 
-    it('CP-002: Intentar iniciar sesión con contraseña incorrecta', async () => {
+    it('CP-002-Intentar iniciar sesion con contraseña incorrecta', async () => {
         await browser.url('/');
         const loginPage = new LoginPage(); // Creamos una instancia de LoginPage
         await loginPage.login('standard_user', '123456');
@@ -26,7 +26,7 @@ describe('Front Test- SauceDemo-Validación de Inicio de Sesión', () => {
         expect(errorText).to.include('Epic sadface: Username and password do not match any user in this service', 'El mensaje de error no es el esperado');
     });
 
-    it('CP-003: Intentar iniciar sesión sin ingresar usuario', async () => {
+    it('CP-003-Intentar iniciar sesion sin ingresar usuario', async () => {
         await browser.url('/');
         const loginPage = new LoginPage(); // Creamos una instancia de LoginPage
         await loginPage.login('', '123456'); // No ingresamos usuario

@@ -1,7 +1,7 @@
 export default class LoginPage {
     get usernameInput() { return $('#user-name'); }
     get passwordInput() { return $('#password'); }
-    get loginButton() { return $('#login-button'); }
+    get loginButton() { return $('#login-button1'); }
 
     async login(username, password) {
         try {
